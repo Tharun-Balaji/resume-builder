@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { AlertCircle, Check, Download } from "lucide-react";
 import ResumeBuilder from "./ResumeBuilder";
+import Script from "next/script";
 
 const initialResumeData = {
 	name: "John Doe",
@@ -53,14 +54,14 @@ class ResumeBuilderInterface extends Component {
 		this.resumeRef = React.createRef();
 	}
 
-	componentDidMount() {
-		// Load html2pdf.js script dynamically
-		const script = document.createElement("script");
-		script.src =
-			"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
-		script.async = true;
-		document.body.appendChild(script);
-	}
+	// componentDidMount() {
+	// 	// Load html2pdf.js script dynamically
+	// 	const script = document.createElement("script");
+	// 	script.src =
+	// 		"https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js";
+	// 	script.async = true; // Load asynchronously
+	// 	document.body.appendChild(script);
+	// }
 
 	handleJsonChange = (e) => {
 		const newJsonInput = e.target.value;
@@ -104,24 +105,23 @@ class ResumeBuilderInterface extends Component {
 		try {
 			const element = this.resumeRef.current;
 			const opt = {
+				// Margin around the PDF content
 				margin: 10,
+				// Filename for the downloaded PDF, replacing spaces with underscores
 				filename: `${this.state.resumeData.name.replace(
 					/\s+/g,
 					"_"
 				)}_resume.pdf`,
-				image: { type: "jpeg", quality: 0.98 },
-				html2canvas: {
-					scale: 2,
-					useCORS: true,
-					logging: false,
-				},
+				// PDF document settings
 				jsPDF: {
-					unit: "mm",
+					// Format of the PDF page
 					format: "a4",
+					// Orientation of the PDF page
 					orientation: "portrait",
 				},
 			};
 
+			// Generate the PDF from the HTML element and save it
 			await html2pdf().set(opt).from(element).save();
 		} catch (error) {
 			console.error("PDF generation failed:", error);
@@ -217,9 +217,6 @@ class ResumeBuilderInterface extends Component {
 							<ResumeBuilder
 								resumeData={resumeData}
 								defaultTemplate={template}
-								onError={(err) =>
-									this.setState({ error: err.message })
-								}
 							/>
 						)}
 					</div>
