@@ -64,50 +64,50 @@ The app accepts a structured JSON format to generate the resume. Below are some 
 
 ### **Profile 1**
 
+```json
 {
-"name": "John Doe",
-"title": "Full Stack Developer",
-"contact": {
-"email": "johndoe@example.com",
-"phone": "123-456-7890",
-"linkedin": "https://linkedin.com/in/johndoe",
-"portfolio": "https://johndoe.dev"
-},
-"summary": "Experienced developer with expertise in building scalable web applications.",
-"skills": ["JavaScript", "React", "Node.js", "Next.js", "Tailwind CSS"],
-"experience": [
-{
-"company": "Tech Corp",
-"role": "Frontend Developer",
-"duration": "Jan 2021 - Dec 2022",
-"responsibilities": [
-"Developed user interfaces using React and Tailwind CSS.",
-"Collaborated with backend developers to integrate APIs."
-]
-},
-{
-"company": "Web Solutions",
-"role": "Junior Developer",
-"duration": "Jun 2019 - Dec 2020",
-"responsibilities": [
-"Maintained and enhanced legacy code.",
-"Participated in daily stand-up meetings and sprint planning."
-]
+  "name": "John Doe",
+  "title": "Full Stack Developer",
+  "contact": {
+    "email": "johndoe@example.com",
+    "phone": "123-456-7890",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "portfolio": "https://johndoe.dev"
+  },
+  "summary": "Experienced developer with expertise in building scalable web applications.",
+  "skills": ["JavaScript", "React", "Node.js", "Next.js", "Tailwind CSS"],
+  "experience": [
+    {
+      "company": "Tech Corp",
+      "role": "Frontend Developer",
+      "duration": "Jan 2021 - Dec 2022",
+      "responsibilities": [
+        "Developed user interfaces using React and Tailwind CSS.",
+        "Collaborated with backend developers to integrate APIs."
+      ]
+    },
+    {
+      "company": "Web Solutions",
+      "role": "Junior Developer",
+      "duration": "Jun 2019 - Dec 2020",
+      "responsibilities": [
+        "Maintained and enhanced legacy code.",
+        "Participated in daily stand-up meetings and sprint planning."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Tech",
+      "degree": "BSc in Computer Science",
+      "year": "2019"
+    }
+  ]
 }
-],
-"education": [
-{
-"institution": "University of Tech",
-"degree": "BSc in Computer Science",
-"year": "2019"
-}
-]
-}
-
-````
-
+```
 
 ### **Profile 2**
+
 ```json
 {
   "name": "Michael Johnson",
@@ -118,21 +118,11 @@ The app accepts a structured JSON format to generate the resume. Below are some 
     "location": "Austin, TX"
   },
   "professionalSummary": "Software engineer with expertise in backend development and cloud computing, experienced in creating robust microservices.",
-  "skills": [
-    "Java",
-    "Spring Boot",
-    "AWS",
-    "Kubernetes",
-    "PostgreSQL"
-  ],
+  "skills": ["Java", "Spring Boot", "AWS", "Kubernetes", "PostgreSQL"],
   "projects": [
     {
       "name": "Inventory Management System",
-      "technologies": [
-        "Spring Boot",
-        "PostgreSQL",
-        "Docker"
-      ],
+      "technologies": ["Spring Boot", "PostgreSQL", "Docker"],
       "description": "Built a system to manage inventory for retail chains, improving accuracy by 30%."
     }
   ],
@@ -157,7 +147,7 @@ The app accepts a structured JSON format to generate the resume. Below are some 
     }
   ]
 }
-````
+```
 
 ### **Profile 3**
 
