@@ -114,6 +114,11 @@ class ResumeBuilder extends Component {
 			return;
 		}
 
+		if (!resumeData) {
+			this.setState({ renderedContent: "<div>No resume data</div>" });
+			return;
+		}
+
 		// Create a temporary container
 		const tempContainer = document.createElement("div");
 		tempContainer.innerHTML = atob(template);
